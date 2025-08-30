@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css" />
       </head>

@@ -13,7 +13,7 @@ function ProductsList(products: any) {
       Products.map((product: any) =>(
 
         <li key={product.id} 
-          // onClick={ () => { router.push(`/products/${product.id}`) }}
+          
           onClick={ () => { router.push(`/products/${product.id}`) }}
           className='list-group-item 
             justify-content-between
@@ -32,7 +32,7 @@ function ProductsList(products: any) {
           { product.isAvailable ? <span className="badge text-bg-secondary text-bg-success">En stock</span> : <span className="badge text-bg-secondary">Sin stock</span>}
           </div>
           <div className=''>
-          <img src={'http://localhost:3000/api' + product.image} alt='imagen'
+          <img src={'http://localhost:3001/api' + product.image} alt='imagen'
             width='200px'
             height='200px'
           ></img>

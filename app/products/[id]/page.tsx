@@ -11,23 +11,20 @@ const page = () => {
     const [myIsAvailable, setMyIsAvailable] = React.useState(null);
     const [myCategory, setMyCategory] = React.useState(null);
     const [myImage, setMyImage] = React.useState(null);
-    const getProduct = (id: String) => {
-    // console.log('aqui' + id);
-        return id;
-        
-    };
+
 
 
 
 
     const params = useParams();
 
-    console.log(String(params.id));
+    
 
     // const data =  getProduct(String(params.id));
     React.useEffect(()=> {
         async function fetchProduct(id: String){
-            const rest = await fetch("http://localhost:3000/api/products/" + id);
+        
+            const rest = await fetch("http://localhost:3001/api/products/" + id);
             const data = await rest.json();
     
             setMyId(data.id);
@@ -52,7 +49,9 @@ const page = () => {
         '>
 
             <div className='card text-center align-items-center'>
-                <img src={'http://localhost:3000/api' + myImage} alt='imagen'
+                <img src={
+                    myImage == null ? 'null' : 'http://localhost:3001/api' + myImage
+                    } alt='imagen'
                     width='300px'
                     height='300px'
                 ></img>
